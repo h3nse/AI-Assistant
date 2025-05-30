@@ -1,10 +1,8 @@
 from flask import Flask, jsonify, request
-from dotenv import load_dotenv
 import os
 
 app = Flask(__name__)
 
-load_dotenv()
 api_key: str = os.getenv("API_KEY")
 
 
