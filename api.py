@@ -16,7 +16,8 @@ def get_data():
 def get_post_data():
     json = request.json
     print(json)
-    return "", 204
+    data = {"result": "Hi!"}
+    return jsonify(data)
 
 
 if __name__ == "__main__":
