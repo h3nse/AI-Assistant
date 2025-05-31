@@ -5,9 +5,11 @@ import requests
 # )
 # print(res.json())
 
-res = requests.post(
+with requests.post(
     "https://cloud-server-testing-production.up.railway.app/sendQuery",
-    json={"query": "Hello"},
-)
-
-print(res.json())
+    json={"query": "write a poem"},
+    stream=True,
+) as response:
+    for chunk in response.iter_content(chunk_size=1024):
+        if chunk:
+            print(chunk)
