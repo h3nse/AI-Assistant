@@ -1,4 +1,5 @@
-.env
+.vscode
 backend/env
+backend/app/__pycache__
 client/env
 
