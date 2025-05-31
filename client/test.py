@@ -12,4 +12,4 @@ with requests.post(
 ) as response:
     for chunk in response.iter_content(chunk_size=1024):
         if chunk:
-            print(chunk)
+            print(chunk.decode("utf-8"), end="")
