@@ -1,10 +1,8 @@
 from flask import Flask, jsonify, request
 import os
-from backend.app import main
+from app import main
 
 app = Flask(__name__)
-
-api_key: str = os.getenv("API_KEY")
 
 
 @app.route("/get", methods=["GET"])
