@@ -1,6 +1,6 @@
 from openai import OpenAI
 import os
-import config
+from app import config
 
 client = OpenAI()
 
