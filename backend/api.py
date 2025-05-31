@@ -1,5 +1,6 @@
 from flask import Flask, jsonify, request
 import os
+from backend.app import main
 
 app = Flask(__name__)
 
@@ -12,12 +13,12 @@ def get_data():
     return jsonify(data)
 
 
-@app.route("/post", methods=["POST"])
+@app.route("/sendQuery", methods=["POST"])
 def get_post_data():
     json = request.json
-    print(json)
-    data = {"result": "Hi!"}
-    return jsonify(data)
+    query = json["query"]
+    response = main.query(query)
+    return jsonify({"response": response})
 
 
 if __name__ == "__main__":
